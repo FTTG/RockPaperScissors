@@ -30,15 +30,41 @@ function playRound() {
     console.log(computer);
     // Run validation for tie, if not then all scenarios where player wins and else player loses.
     if (player == computer) {
-        return `Tie! Both chose ${player}`;
+        console.log(`Tie! Both chose ${player}`);
+        return 0;
     }
     else if (player == 'rock' && computer == 'scissors' || player == 'paper' && computer == 'rock' || player == 'scissors' && computer == 'paper') {
-        return `You win! ${player} beats ${computer}`;
+        console.log(`You win! ${player} beats ${computer}`);
+        return 1;
     }
     else {
-        return `You lose! ${computer} beats ${player}`;
+        console.log(`You lose! ${computer} beats ${player}`);
+        return 2;
     }
 
 }
 
-console.log(playRound());
+function playGame() {
+    let computerWins = 0;
+    let playerWins = 0;
+    for (i = 0; i < 5; i++) {
+        switch (playRound()) {
+            case 0:
+                break;
+            case 1:
+                playerWins++;
+                break;
+            case 2:
+                computerWins++;
+                break;
+        }
+    }
+    if (computerWins == playerWins) {
+        return `Game ends in a tie! Score: ${playerWins}`;
+    }
+    else {
+        return playerWins > computerWins ? `Player wins! ${playerWins} over ${computerWins}` : `Player lost! ${playerWins} against ${computerWins}`;
+    }
+}
+
+console.log(playGame());
