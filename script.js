@@ -20,9 +20,12 @@ function getPlayerChoice() {
     return prompt('Rock, Paper or Scissors?');
 }
 
-function playRound(player, computer) {
+function playRound() {
+    let player = getPlayerChoice();
     player = player.toLowerCase();
+    let computer = getComputerChoice();
     console.log(player);
+    console.log(computer);
     if (player == computer) {
         return `Tie! Both chose ${player}`;
     }
@@ -34,10 +37,5 @@ function playRound(player, computer) {
     }
 
 }
-
-
-const playerSelection = 'Rock';
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
 
 console.log(playRound(playerSelection, computerSelection));
