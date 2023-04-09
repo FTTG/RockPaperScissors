@@ -16,6 +16,10 @@ function getComputerChoice() {
     }
 }
 
+function getPlayerChoice() {
+    return prompt('Rock, Paper or Scissors?');
+}
+
 function playRound(player, computer) {
     player = player.toLowerCase();
     console.log(player);
