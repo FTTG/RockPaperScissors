@@ -38,4 +38,4 @@ function playRound() {
 
 }
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound());
