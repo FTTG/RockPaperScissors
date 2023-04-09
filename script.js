@@ -47,6 +47,7 @@ function playRound() {
 function playGame() {
     let computerWins = 0;
     let playerWins = 0;
+    // Run game 5 times with Switch to add points based on round result.
     for (i = 0; i < 5; i++) {
         switch (playRound()) {
             case 0:
@@ -59,6 +60,7 @@ function playGame() {
                 break;
         }
     }
+    // Print out the winner based on the results of the 5 games.
     if (computerWins == playerWins) {
         return `Game ends in a tie! Score: ${playerWins}`;
     }
