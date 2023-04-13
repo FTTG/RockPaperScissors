@@ -17,13 +17,13 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    return prompt('Rock, Paper or Scissors?');
-}
+// function getPlayerChoice() {
+//     return prompt('Rock, Paper or Scissors?');
+// }
 
 function playRound() {
-    // Run funcitions to get both the player and computer choices
-    let player = getPlayerChoice();
+    // Run funcitions to get computer choices and get value of button pressed
+    let player = this.value
     player = player.toLowerCase();
     let computer = getComputerChoice();
     console.log(player);
