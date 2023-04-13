@@ -1,5 +1,5 @@
-let playerScore = 0;
-let computerScore = 0;
+let _playerScore = 0;
+let _computerScore = 0;
 
 function getComputerChoice() {
     // Use Math.random * 3 to get a number between 0 and 2 to define the computer's choice.
@@ -26,6 +26,7 @@ function playRound() {
     let computer = getComputerChoice();
     determineRoundWinner(player, computer);
     updateScores();
+    checkForGameWinner();
 }
 
 function determineRoundWinner(player, computer) {
@@ -38,20 +39,24 @@ function determineRoundWinner(player, computer) {
     else if (player == 'Rock' && computer == 'Scissors' || player == 'Paper' && computer == 'Rock' || player == 'Scissors' && computer == 'Paper') {
         console.log(`You win! ${player} beats ${computer}`);
         resultRound.textContent = `You win! ${player} beats ${computer}`;
-        playerScore++;
+        _playerScore++;
     }
     else {
         console.log(`You lose! ${player} is beaten by ${computer}`);
         resultRound.textContent = `You lose! ${player} is beaten by ${computer}`;
-        computerScore++;
+        _computerScore++;
     }
 }
 
 function updateScores() {
     const playerScoreText = document.querySelector('#playerScore');
     const computerScoreText = document.querySelector('#computerScore');
-    playerScoreText.textContent = `Score: ${playerScore}`;
-    computerScoreText.textContent = `Score: ${computerScore}`;
+    playerScoreText.textContent = `Score: ${_playerScore}`;
+    computerScoreText.textContent = `Score: ${_computerScore}`;
+}
+
+function checkForGameWinner() {
+
 }
 
 const selectWeapon = document.querySelectorAll('.weapon');
