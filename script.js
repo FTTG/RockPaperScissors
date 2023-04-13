@@ -17,10 +17,6 @@ function getComputerChoice() {
     }
 }
 
-// function getPlayerChoice() {
-//     return prompt('Rock, Paper or Scissors?');
-// }
-
 function playRound() {
     // Run funcitions to get computer choices and get value of button pressed
     let player = this.value
@@ -47,31 +43,6 @@ function playRound() {
     }
 
 }
-
-// function playGame() {
-//     let computerWins = 0;
-//     let playerWins = 0;
-//     // Run game 5 times with Switch to add points based on round result.
-//     for (i = 0; i < 5; i++) {
-//         switch (playRound()) {
-//             case 0:
-//                 break;
-//             case 1:
-//                 playerWins++;
-//                 break;
-//             case 2:
-//                 computerWins++;
-//                 break;
-//         }
-//     }
-//     // Print out the winner based on the results of the 5 games.
-//     if (computerWins == playerWins) {
-//         return `Game ends in a tie! Score: ${playerWins}`;
-//     }
-//     else {
-//         return playerWins > computerWins ? `Player wins! ${playerWins} over ${computerWins}` : `Player lost! ${playerWins} against ${computerWins}`;
-//     }
-// }
 
 const selectWeapon = document.querySelectorAll('.weapon');
 
