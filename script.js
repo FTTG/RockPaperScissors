@@ -3,13 +3,13 @@ function getComputerChoice() {
     let hand = Math.floor(Math.random() * 3);
     switch (hand) {
         case 0:
-            return 'rock';
+            return 'Rock';
             break;
         case 1:
-            return 'paper';
+            return 'Paper';
             break;
         case 2:
-            return 'scissors';
+            return 'Scissors';
             break;
         default:
             return 'This was not supposed to happen';
@@ -20,7 +20,6 @@ function getComputerChoice() {
 function playRound() {
     // Run funcitions to get computer choices and get value of button pressed
     let player = this.value
-    player = player.toLowerCase();
     let computer = getComputerChoice();
     let resultRound = document.querySelector('#resultRound');
     console.log(player);
