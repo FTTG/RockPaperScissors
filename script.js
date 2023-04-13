@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     // Use Math.random * 3 to get a number between 0 and 2 to define the computer's choice.
     let hand = Math.floor(Math.random() * 3);
@@ -28,19 +31,28 @@ function playRound() {
     if (player == computer) {
         console.log(`Tie! Both chose ${player}`);
         resultRound.textContent = `Tie! Both chose ${player}`;
-        return 0;
+        //return 0;
     }
-    else if (player == 'rock' && computer == 'scissors' || player == 'paper' && computer == 'rock' || player == 'scissors' && computer == 'paper') {
+    else if (player == 'Rock' && computer == 'Scissors' || player == 'Paper' && computer == 'Rock' || player == 'Scissors' && computer == 'Paper') {
         console.log(`You win! ${player} beats ${computer}`);
         resultRound.textContent = `You win! ${player} beats ${computer}`;
-        return 1;
+        playerScore++;
+        //return 1;
     }
     else {
         console.log(`You lose! ${player} is beaten by ${computer}`);
         resultRound.textContent = `You lose! ${player} is beaten by ${computer}`;
-        return 2;
+        computerScore++;
+        //return 2;
     }
+    updateScores();
+}
 
+function updateScores() {
+    const playerScoreText = document.querySelector('#playerScore');
+    const computerScoreText = document.querySelector('#computerScore');
+    playerScoreText.textContent = `Score: ${playerScore}`;
+    computerScoreText.textContent = `Score: ${computerScore}`;
 }
 
 const selectWeapon = document.querySelectorAll('.weapon');
