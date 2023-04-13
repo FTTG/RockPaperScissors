@@ -26,7 +26,7 @@ function playRound() {
     let computer = getComputerChoice();
     determineRoundWinner(player, computer);
     updateScores();
-    checkForGameWinner();
+    if (_playerScore >= 5 || _computerScore >= 5) setGameWinner();
 }
 
 function determineRoundWinner(player, computer) {
@@ -55,8 +55,20 @@ function updateScores() {
     computerScoreText.textContent = `Score: ${_computerScore}`;
 }
 
-function checkForGameWinner() {
-
+function setGameWinner() {
+    let winner = '';
+    // Define who got to 5 points first, and then reset the scores.
+    if (_playerScore >= 5) winner = 'the Player';
+    else winner = 'the Computer';
+    _computerScore = 0;
+    _playerScore = 0;
+    // Display the winner and resets the scores on the DOM.
+    const playerScoreText = document.querySelector('#playerScore');
+    const computerScoreText = document.querySelector('#computerScore');
+    playerScoreText.textContent = `Score: 0`;
+    computerScoreText.textContent = `Score: 0`;
+    const resultRound = document.querySelector('#resultRound');
+    resultRound.textContent = `The winner of this Game was ${winner}!`;
 }
 
 const selectWeapon = document.querySelectorAll('.weapon');
