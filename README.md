@@ -9,3 +9,6 @@ Use event listeners and also provide results and score on the page while the gam
 ## Terminology / Notations
 * During commits "RPS" will be used to abbreviate "Rock, Paper, Scissors".
 * All global variables will be named with an underscore at the start of the name. eg: "_playerScore".
+
+## Credit
+* Rock Paper Scissors icons from Vecteezy.

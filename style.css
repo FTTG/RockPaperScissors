@@ -1,0 +1,48 @@
+body {
+    background-color: #454545;
+    font-family: 'Dongle', sans-serif;
+}
+
+h1 {
+    font-size: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+.title,
+#resultRound {
+    text-align: center;
+    margin: 0;
+}
+
+.title p,
+#resultRound {
+    font-size: 40px;
+    margin: 0;
+}
+
+.playSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playSectionItem {
+    width: 300px;
+    text-align: center;
+}
+
+.playSpace button {
+    border: none;
+    appearance: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 5px;
+}
+
+.playSpace img,
+#pcweapon {
+    width: 80px;
+    border: solid #93B7BE 3px;
+    border-radius: 5px;
+}
