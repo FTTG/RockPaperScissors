@@ -4,19 +4,20 @@ let _computerScore = 0;
 function getComputerChoice() {
     // Use Math.random * 3 to get a number between 0 and 2 to define the computer's choice.
     let hand = Math.floor(Math.random() * 3);
+    const pcWeapon = document.querySelector('#pcweapon');
+    pcWeapon.style.border = 'solid #D90368 3px'
     switch (hand) {
         case 0:
+            pcWeapon.src = "images/rock.png"
             return 'Rock';
-            break;
         case 1:
+            pcWeapon.src = "images/paper.png"
             return 'Paper';
-            break;
         case 2:
+            pcWeapon.src = "images/scissors.png"
             return 'Scissors';
-            break;
         default:
             return 'This was not supposed to happen';
-            break;
     }
 }
 

@@ -1,12 +1,16 @@
 body {
-    background-color: #454545;
+    /* background-color: #454545; */
+    height: 100%;
     font-family: 'Dongle', sans-serif;
+    background: linear-gradient(#1A181B, #564D65);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
     font-size: 80px;
     padding: 0;
-    margin: 0;
+    margin: 0 40px;
 }
 
 .title,
@@ -45,4 +49,17 @@ h1 {
     width: 80px;
     border: solid #93B7BE 3px;
     border-radius: 5px;
+}
+
+
+.playSpace img:hover {
+    transform: scale(1.1);
+}
+
+.playSpace img:active {
+    border: solid #C44900 3px;
+}
+
+.score {
+    font-size: 40px;
 }
