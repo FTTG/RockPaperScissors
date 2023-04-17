@@ -24,6 +24,7 @@ function getComputerChoice() {
 function playRound() {
     // Run funcitions to get computer choices and get value of button pressed
     let player = this.value
+
     let computer = getComputerChoice();
     determineRoundWinner(player, computer);
     updateScores();
@@ -58,9 +59,22 @@ function updateScores() {
 
 function setGameWinner() {
     let winner = '';
+    const nameTag = document.createElement('span');
+    nameTag.id = 'resultWinner';
+    const resultRound = document.querySelector('#resultRound');
     // Define who got to 5 points first, and then reset the scores.
-    if (_playerScore >= 5) winner = 'the Player';
-    else winner = 'the Computer';
+    if (_playerScore >= 5) {
+        // winner = 'the Player';
+        nameTag.textContent = 'the Player'
+        nameTag.style.color = '#266DD3';
+    }
+    else {
+        if (nameTag) {
+            nameTag.textContent = 'the Computer';
+            nameTag.style.color = '#D90368';
+        }
+
+    }
     _computerScore = 0;
     _playerScore = 0;
     // Display the winner and resets the scores on the DOM.
@@ -68,12 +82,14 @@ function setGameWinner() {
     const computerScoreText = document.querySelector('#computerScore');
     playerScoreText.textContent = `Score: 0`;
     computerScoreText.textContent = `Score: 0`;
-    const resultRound = document.querySelector('#resultRound');
-    resultRound.textContent = `The winner of this Game was ${winner}!`;
+
+    resultRound.textContent = `The winner of this Game was `;
+    resultRound.appendChild(nameTag);
 }
 
 const selectWeapon = document.querySelectorAll('.weapon');
-
-for (let weapon of selectWeapon) {
-    weapon.addEventListener('click', playRound);
-}
+document.addEventListener('DOMContentLoaded', function () {
+    for (let weapon of selectWeapon) {
+        weapon.addEventListener('click', playRound);
+    }
+});
